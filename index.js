@@ -3,6 +3,7 @@
  *  Telegram bot to convert your messages using Emoji alphabet
  *********************************/
 var TelegramBot = require('node-telegram-bot-api');
+
 /* Users' configuration management lib
  * MUST implement:
  *  - get(fromId, key, callback)
@@ -11,6 +12,15 @@ var TelegramBot = require('node-telegram-bot-api');
  */
 var config = require('./fs-config-management-lib');
 
+// Simple emoji engine
+var simpleEmoji = require('./engines/simple-emoji-engine');
+
+/*
+ * Available converting engines list
+ */
+var engines = {};
+
+engines["simpleEmoji"] = simpleEmoji;
 
 // **** BOT Configuration **** //
 var token = 'xxx';
@@ -18,6 +28,29 @@ var token = 'xxx';
 
 // Create polling BOT
 var bot = new TelegramBot(token, {polling: true});
+
+// Log any received text
+bot.on('text', function (msg) {
+  var fromId = msg.from.id;
+  console.log('Msg received: ' + JSON.stringify(msg));
+});
+
+//
+bot.on('text', function (msg) {
+  var fromId = msg.from.id;
+  var text = msg.text;
+
+  var engineId = config.get("engine");
+
+  engines
+
+  config.get(fromId, "mode", function(err, configValue){
+    if(!err)
+
+  });
+  bot.sendMessage(fromId, '');
+
+});
 
 
 console.log('Telegram emojibet BOT is alive!');
