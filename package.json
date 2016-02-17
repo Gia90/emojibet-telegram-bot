@@ -1,0 +1,27 @@
+{
+  "name": "emojibet-telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram BOT to convert any message using different emoji alphabets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gia90/emojibet-telegram-bot.git"
+  },
+  "keywords": [
+    "Telegram",
+    "Bot",
+    "emoji"
+  ],
+  "author": "Gia90",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gia90/emojibet-telegram-bot/issues"
+  },
+  "homepage": "https://github.com/Gia90/emojibet-telegram-bot#readme",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.20.1"
+  }
+}
