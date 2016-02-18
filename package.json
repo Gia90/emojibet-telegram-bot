@@ -2,7 +2,7 @@
   "name": "emojibet-telegram-bot",
   "version": "1.0.0",
   "description": "Telegram BOT to convert any message using different emoji alphabets",
-  "main": "index.js",
+  "main": "app/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

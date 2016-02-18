@@ -12,15 +12,12 @@ var TelegramBot = require('node-telegram-bot-api');
  */
 var config = require('./fs-config-management-lib');
 
-// Simple emoji engine
-var simpleEmoji = require('./engines/simple-emoji-engine');
-
 /*
  * Available converting engines list
  */
 var engines = {};
-
-engines["simpleEmoji"] = simpleEmoji;
+// Simple emoji engine
+engines["simpleEmoji"] = require('./engines/simple-emoji-engine');
 
 // **** BOT Configuration **** //
 var token = 'xxx';
