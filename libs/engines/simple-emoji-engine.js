@@ -12,7 +12,7 @@ module.exports = {
 };
 
 /* Map to replace single char with single similarly shaped emoji
- *    "A"-"Z" = 65 - 90
+ *    " "-"Z" = 32 - 90
  */
 var conversionAsciiMap = [
   " ",
