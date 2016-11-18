@@ -12,6 +12,12 @@ module.exports = {
   }
 };
 
+/*****
+USEFUL EMOJI LINKS:
+https://www.pastemagazine.com/articles/2015/03/the-definitive-emoji-alphabet.html
+http://unicode.org/emoji/charts/full-emoji-list.html
+******/
+
 /* Map to replace single char with single similarly shaped emoji
  *    " "-"`" = 32 - 96
  */
