@@ -1,18 +1,19 @@
 module.exports = {
-  // Reset user config
+  // Convert
   convert: function(text, callback) {
     var convertedText = "";
     var upperText = text.toUpperCase();
     for (var i = 0; i < upperText.length; i++)
     {
-        convertedText += conversionAsciiMap[upperText.charCodeAt(i) - 32];
+        convertedChar = conversionAsciiMap[upperText.charCodeAt(i) - firstAsciiValue];
+        convertedText += ( convertedChar ? convertedChar : upperText[i] );  // use the original char if no conversion available
     }
     callback(null, convertedText);
   }
 };
 
 /* Map to replace single char with single similarly shaped emoji
- *    " "-"Z" = 32 - 90
+ *    " "-"`" = 32 - 96
  */
 var conversionAsciiMap = [
   " ",
@@ -73,5 +74,14 @@ var conversionAsciiMap = [
   "\u{1F4C8}",
   "\u{274C}",
   "\u{270C}",
-  "\u{24CF}"
+  "\u{24CF}",  // "Z"
+  "",   // "["
+  "",   // "\"
+  "",   // "]"
+  "",   // "^"
+  "",   // "_"
+  "",   // "`"
 ];
+
+// Ascii value of the first uppercase letter used as offset, corresponding to index 0 in conversionAsciiMap
+var firstAsciiValue = conversionAsciiMap[0].charCodeAt(0);
